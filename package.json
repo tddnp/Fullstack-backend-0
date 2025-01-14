@@ -1,0 +1,23 @@
+{
+  "name": "backend0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/tddnp/Fullstack-backend-0.git"
+  },
+  "author": "DuyTran",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tddnp/Fullstack-backend-0/issues"
+  },
+  "homepage": "https://github.com/tddnp/Fullstack-backend-0#readme",
+  "dependencies": {
+    "express": "4.18.2"
+  }
+}
