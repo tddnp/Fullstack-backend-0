@@ -9,6 +9,9 @@ const port = process.env.PORT || 3000 // port
 app.set('views', path.join(__dirname, './views'))
 app.set('view engine', 'ejs')
 
+// config static file
+app.use(express.static(path.join(__dirname, 'public')))
+
 //initiate routes
 app.get('/', (req, res) => {
     res.send('Hello world')
