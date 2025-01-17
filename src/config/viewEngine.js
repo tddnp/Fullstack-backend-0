@@ -10,7 +10,6 @@ const configViewEngine = (app) => {
     // config static file: image, css, js
     app.use(express.static(path.join('./src', 'public')))
     console.log("dirname: ", __dirname)
-
 }
 
 module.exports = configViewEngine
