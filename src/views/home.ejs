@@ -50,7 +50,8 @@
         </form>
     </div> -->
     <!-- form -->
-
+    <!-- table -->
+    <!-- table -->
     <div class="table-container">
         <table>
             <div class="title">
@@ -61,15 +62,32 @@
                 <th>Email</th>
                 <th>Name</th>
                 <th>City</th>
+                <th>Action</th>
             </tr>
-            <tr>
-                <td>Alfreds Futterkiste</td>
-                <td>Maria Anders</td>
-                <td>Germany</td>
-                <td>Canada</td>
-            </tr>
+
+            <% for (let i=0; i < listUsers.length; i++) { %>
+                <tr>
+                    <td>
+                        <%=listUsers[i].id%>
+                    </td>
+                    <td>
+                        <%=listUsers[i].email%>
+                    </td>
+                    <td>
+                        <%=listUsers[i].name%>
+                    </td>
+                    <td>
+                        <%=listUsers[i].city%>
+                    </td>
+                    <td>
+                        <button>Edit</button>
+                        <button>Delete</button>
+                    </td>
+                </tr>
+                <% } %>
         </table>
     </div>
+    <!-- table -->
 </body>
 
 </html>
