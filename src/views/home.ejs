@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- navbar -->
+    <div>
+        <ul>
+            <li><a href="default.asp">Home</a></li>
+            <li><a href="news.asp">News</a></li>
+            <li><a href="contact.asp">Contact</a></li>
+            <li><a href="about.asp">About</a></li>
+        </ul>
+    </div>
+    <!-- navbar -->
+
+    <!-- form -->
+    <div>
+        <form action="create-user" method="POST">
+            <div class="imgcontainer">
+                <img src="images/babe.png" width="10px" height="300px" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="container">
+                <label for="uname"><b>Email</b></label>
+                <input type="text" placeholder="Enter email" name="email" required>
+
+                <label for="psw"><b>Name</b></label>
+                <input type="password" placeholder="Enter name" name="name" required>
+
+                <label for="psw"><b>City</b></label>
+                <input type="password" placeholder="Enter city" name="city" required>
+
+                <button type="submit">Register</button>
+                <label>
+                    <input type="checkbox" name=""> Remember me
+                </label>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" class="cancelbtn">Cancel</button>
+                <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+        </form>
+    </div>
+    <!-- form -->
+</body>
+
+</html>

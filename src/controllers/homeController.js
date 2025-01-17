@@ -1,19 +1,14 @@
 const connection = require('../config/dataBase')
 
-const getHomePage = (req,res) => {
-    //res.render('sample')
+const getHomePage = (req, res) => {
+    return res.render('home')
+}
 
-    let users = []
-    connection.query(
-        'SELECT * FROM Users',
-        (err, results, fields) => {
-            users = results
-            console.log('results home page: ', users)
-            res.send(JSON.stringify(users))
-        }
-    )
+const postCreateUser = (req, res) => {
+    console.log(req.body)
 }
 
 module.exports = {
-    getHomePage
+    getHomePage,
+    postCreateUser
 }
