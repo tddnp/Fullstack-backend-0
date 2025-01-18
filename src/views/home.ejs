@@ -82,7 +82,11 @@
                     <td>
                         <a href="/edit-user/<%=listUsers[i].id%>"
                             style="text-decoration: none"><button>Edit</button></a>
-                        <a href="/delete-user" style="text-decoration: none"><button>Delete</button></a>
+                        <a href="/delete-user" style="text-decoration: none">
+                            <form action="/delete-user/<%=listUsers[i].id%>" method="post">
+                                <button>Delete</button>
+                            </form>
+                        </a>
                     </td>
                 </tr>
                 <% } %>

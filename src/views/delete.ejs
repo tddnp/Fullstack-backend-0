@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <!-- navbar -->
+    <div>
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/create-user">Create user</a></li>
+            <li><a href="contact.asp">Contact</a></li>
+            <li><a href="about.asp">About</a></li>
+        </ul>
+    </div>
+    <!-- navbar -->
+
+    <!-- form -->
+    <div>
+        <form action="/delete-user" method="POST">
+            <div class="imgcontainer">
+                <img src="/images/babe.png" width="10px" height="300px" alt="Avatar" class="avatar">
+            </div>
+            <div class="title">
+                Delete user: <%=user.name%>
+            </div>
+            <div class="container">
+                <div class="d-none">
+                    <label for="uname"><b>Id</b></label>
+                    <input type="text" value="<%=user.id%>" name="id" required>
+                </div>
+
+                <label for="psw"><b>email</b></label>
+                <input type="text" value="<%=user.email%>" name="email" required>
+
+                <button type="submit">Confirm</button>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" class="cancelbtn">Cancel</button>
+                <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+        </form>
+    </div>
+    <!-- form -->
+</body>
+
+</html>
