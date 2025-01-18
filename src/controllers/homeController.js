@@ -1,5 +1,5 @@
 const connection = require('../config/dataBase')
-const { getAllUser } = require('../services/CRUDService')
+const { getAllUser, getUserById, updateUser } = require('../services/CRUDService')
 
 const getHomePage = async (req, res) => {
     let results = await getAllUser()
@@ -36,8 +36,26 @@ const getCreateUser = (req, res) => {
     return res.render('createUser')
 }
 
+const getEditUser = async (req, res) => {
+    let id = req.params.id
+    let user = await getUserById(id)
+    return res.render('editUser', { user: user })
+}
+
+const postEditUser = async (req, res) => {
+    let email = req.body.email
+    let name = req.body.name
+    let city = req.body.city
+    let id = req.body.id
+    console.log('id: ', id)
+    await updateUser(email, name, city, id)
+    res.send('update successfully')
+}
+
 module.exports = {
     getHomePage,
     postCreateUser,
-    getCreateUser
+    getCreateUser,
+    getEditUser,
+    postEditUser
 }

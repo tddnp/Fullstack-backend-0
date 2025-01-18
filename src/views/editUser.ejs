@@ -22,20 +22,27 @@
 
     <!-- form -->
     <div>
-        <form action="/create-user" method="POST">
+        <form action="/edit-user" method="POST">
             <div class="imgcontainer">
                 <img src="/images/babe.png" width="10px" height="300px" alt="Avatar" class="avatar">
             </div>
-
+            <div class="title">
+                Edit user
+            </div>
             <div class="container">
+                <div class="d-none">
+                    <label for="uname"><b>ID</b></label>
+                    <input type="text" value="<%=user.id%>" name="id" required>
+                </div>
+
                 <label for="uname"><b>Email</b></label>
-                <input type="text" placeholder="Enter email" name="email" required>
+                <input type="text" value="<%=user.email%>" name="email" required>
 
                 <label for="psw"><b>Name</b></label>
-                <input type="text" placeholder="Enter name" name="name" required>
+                <input type="text" value="<%=user.name%>" name="name" required>
 
                 <label for="psw"><b>City</b></label>
-                <input type="text" placeholder="Enter city" name="city" required>
+                <input type="text" value="<%=user.city%>" name="city" required>
 
                 <button type="submit">Register</button>
                 <label>

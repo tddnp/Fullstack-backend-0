@@ -5,4 +5,19 @@ const getAllUser = async (req, res) => {
     return results
 }
 
-module.exports = { getAllUser }
+const getUserById = async (id) => {
+    let [results, fields] = await connection.query(`SELECT * FROM Users WHERE id = ?`, [id])
+    let user = results && results.length > 0 ? results[0] : {}
+    return user
+}
+
+const updateUser = async (email, name, city, id) => {
+    let [results, fields] = await connection.query(
+        `UPDATE Users
+        SET email = ?, name = ?, city = ?
+        WHERE id = ?`,
+        [email, name, city, id]
+    )
+}
+
+module.exports = { getAllUser, getUserById, updateUser }
