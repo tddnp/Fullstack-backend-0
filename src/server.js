@@ -18,8 +18,16 @@ app.use(express.urlencoded({ extended: true }))
 configViewEngine(app);
 
 //initiate routes
-app.use('/', webRouter)
+app.use('/', webRouter);
 
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-})
+// self running function
+(async () => {
+    try {
+        await connection();
+        app.listen(port, () => {
+            console.log(`Backend app listening on port ${port}`)
+        })
+    } catch (err) {
+        console.log('Error connect to DB ', err)
+    }
+})()
