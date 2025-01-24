@@ -4,6 +4,7 @@ const path = require('path')
 const configViewEngine = require('./config/viewEngine')
 const webRouter = require('./routes/web')
 const connection = require('./config/dataBase')
+const { Mongoose, default: mongoose } = require('mongoose')
 //const bodyParser = require('body-parser');
 
 const app = express() // app express
@@ -19,6 +20,14 @@ configViewEngine(app);
 
 //initiate routes
 app.use('/', webRouter);
+
+const KittySchema = new mongoose.Schema({
+    name: String
+});
+
+const Kitten = mongoose.model('Kitten', KittySchema);
+const silence = new Kitten({ name: "silence" });
+silence.save();
 
 // self running function
 (async () => {
