@@ -3,6 +3,7 @@ const express = require('express')
 const path = require('path')
 const configViewEngine = require('./config/viewEngine')
 const webRouter = require('./routes/web')
+const apiRouter = require('./routes/api')
 const connection = require('./config/dataBase')
 const { Mongoose, default: mongoose } = require('mongoose')
 //const Kitten = require("./models/Kitten")
@@ -21,6 +22,7 @@ configViewEngine(app);
 
 //initiate routes
 app.use('/', webRouter);
+app.use('/v1/api/', apiRouter);
 
 // self running function
 (async () => {
